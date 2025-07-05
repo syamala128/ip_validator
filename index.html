@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IP Address Validator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-box">
+        <h1>IP Address Validator</h1>
+        <form method="POST">
+            <input type="text" name="ip" placeholder="Enter IP address..." required>
+            <button type="submit">Validate</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            {% if result.valid %}
+                <p><strong>{{ result.ip }}</strong> is a <span class="valid">valid</span> IP address.</p>
+                <p>Class: <strong>{{ result.class }}</strong></p>
+                <p>Default Subnet Mask: <strong>{{ result.subnet }}</strong></p>
+            {% else %}
+                <p><strong>{{ result.ip }}</strong> is an <span class="invalid">invalid</span> IP address.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
