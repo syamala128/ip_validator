@@ -1,4 +1,4 @@
-# IP Address Validator Web App 🧠🌐
+# IP Address Validator Web App 
 
 This is a simple Flask web application that lets users validate IPv4 addresses and displays their class and default subnet mask.
 
